@@ -8,3 +8,5 @@ dist/
 tmp
 *.js
 *.map
+
+src/environments/firebase.config.ts

@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {AngularFireModule} from "angularfire2";
+import {firebaseConfig} from "../environments/firebase.config";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -12,7 +15,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    CommonModule,
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
