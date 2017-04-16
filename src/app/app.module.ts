@@ -7,10 +7,16 @@ import { AppComponent } from './app.component';
 import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "../environments/firebase.config";
 import {CommonModule} from "@angular/common";
+import { HomeComponent } from './home/home.component';
+import {LessonsService} from "./shared/model/lessons.service";
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +25,7 @@ import {CommonModule} from "@angular/common";
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [LessonsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

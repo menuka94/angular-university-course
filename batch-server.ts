@@ -41,12 +41,12 @@ function runConsumer() {
         Promise.all([deleteLessonPromise, deleteLessonPerCoursePromise])
             .then(
                 () => {
-                    console.log("lesson deleted");
+                    console.log("lesson.ts deleted");
                     resolve();
                 }
             )
             .catch(() => {
-            console.log("lesson deletion in error");
+            console.log("lesson.ts deletion in error");
             reject();
         });
 

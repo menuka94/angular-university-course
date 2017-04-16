@@ -41,7 +41,7 @@ dbData.courses.forEach( course => {
 
   course.lessons.forEach((lesson:any) =>  {
 
-    console.log('adding lesson ', lesson.url);
+    console.log('adding lesson.ts ', lesson.url);
 
     lessonKeysPerCourse.push(lessonsRef.push({
         description: lesson.description,
@@ -61,7 +61,7 @@ dbData.courses.forEach( course => {
   const lessonsPerCourse = association.child(courseRef.key);
 
   lessonKeysPerCourse.forEach(lessonKey => {
-    console.log('adding lesson to course ');
+    console.log('adding lesson.ts to course ');
 
     const lessonCourseAssociation = lessonsPerCourse.child(lessonKey);
 
