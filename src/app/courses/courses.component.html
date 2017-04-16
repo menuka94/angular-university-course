@@ -1,0 +1,13 @@
+<table class="courses-list card card-strong">
+    <tr class="course-summary" *ngFor="let course of (courses$ | async)">
+        <td>
+            <img src="http://icons.iconarchive.com/icons/zhoolego/material/512/Folder-Images-icon.png" class="lesson-logo">
+        </td>
+        <td class="description">
+            {{course.description}}
+        </td>
+        <td>
+            <button [routerLink]="course.url">View</button>
+        </td>
+    </tr>
+</table>

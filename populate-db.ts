@@ -21,7 +21,7 @@ initializeApp(firebaseConfig);
 
 
 const coursesRef = database().ref('courses');
-const lessonsRef = database().ref('allLessons');
+const lessonsRef = database().ref('lessons');
 
 
 
@@ -39,7 +39,7 @@ dbData.courses.forEach( course => {
 
   let lessonKeysPerCourse = [];
 
-  course.allLessons.forEach((lesson:any) =>  {
+  course.lessons.forEach((lesson:any) =>  {
 
     console.log('adding lesson.ts ', lesson.url);
 

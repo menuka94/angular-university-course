@@ -1,0 +1,11 @@
+.top-menu li.first-child{
+    margin-left: 20px;
+}
+
+#nav-bar{
+    margin-left: 50px;
+}
+
+header {
+    height: 55px;
+}
