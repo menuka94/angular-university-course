@@ -10,8 +10,13 @@ import {CommonModule} from "@angular/common";
 import { HomeComponent } from './home/home.component';
 import {LessonsService} from "./shared/model/lessons.service";
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/do';
+// import 'rxjs/add/operator/switchMap';
+// import 'rxjs/add/operator/flatMap';
+import 'rxjs/Rx';
+// import 'rxjs/add/operator/combineLatest';
+
 import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import {RouterModule} from "@angular/router";
 import {routerConfig} from "./router.config";
