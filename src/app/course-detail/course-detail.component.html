@@ -1,10 +1,13 @@
+<h2>{{ (course$ | async)?.description }}</h2>
+
 <div class="lessons-list-container v-h-center-block-parent">
     <div class="nav-bar">
-        <button>Previous Page</button>
-        <button>Next Page</button>
+        <button (click)="previous()">Previous Page</button>
+        <button (click)="next()">Next Page</button>
     </div>
 
-    <app-lessons-list></app-lessons-list>
+    <app-lessons-list [lessons]="lessons$ | async"
+                      (lesson)="navigateToLesson($event)"></app-lessons-list>
 
     <div class="tools-bar">
         <button>New Lesson</button>
