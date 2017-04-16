@@ -11,4 +11,25 @@ export class Lesson{
    ){
 
    }
+
+   get isBeginner(){
+      return this.tags && this.tags.includes('BEGINNER');
+   }
+
+   static fromJsonList(array): Lesson[] {
+      return array.map(json => Lesson.fromJson(json));
+   }
+
+   static fromJson({$key, description, duration, url, tags, pro, longDescription, courseId}): Lesson{
+      return new Lesson(
+          $key,
+          description,
+          duration,
+          url,
+          tags,
+          pro,
+          longDescription,
+          courseId
+      );
+   }
 }

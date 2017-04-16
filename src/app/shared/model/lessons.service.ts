@@ -9,6 +9,8 @@ export class LessonsService {
   constructor(private af: AngularFire) { }
 
   findAllLessons(): Observable<Lesson[]>{
-    return this.af.database.list('lessons');
+    return this.af.database.list('lessons')
+        .do(val => console.log('Inside the service: ',val))
+        .map(Lesson.fromJsonList);
   }
 }

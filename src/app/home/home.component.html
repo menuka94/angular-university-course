@@ -1,18 +1,8 @@
 <h2>All Lessons</h2>
 
-<h4>Total Lessons: {{lessons?.length}}</h4>
+<h4>Total Lessons: {{allLessons?.length}}</h4>
 
-<input placeholder="search" class="search-bar">
+<input #input placeholder="search" class="search-bar" (keyup)="search(input.value)">
 <div class="lesson-list-container v-h-center-block-parent">
-    <table class="table lessons-list card card-strong">
-        <tbody>
-        <tr *ngFor="let lesson of lessons">
-            <td class="lesson-title">{{lesson.description}}</td>
-            <td class="duration">
-                <i class="md-icon duration-icon">access_time</i>
-                <span>{{lesson.duration}}</span>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <app-lessons-list [lessons]="filtered"></app-lessons-list>
 </div>

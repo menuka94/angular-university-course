@@ -205,7 +205,7 @@ export const dbData = {
           "url": "angular2-how-to--aAvoid-duplicate-http-requests-rxjs-cache-operator",
           "tags": "INTERMEDIATE",
           "pro": true,
-          "longDescription": "In this lesson.ts we are going to use the HTTP module to implement a modification operation: we are going to add a lesson.ts to a lessons list via an HTTP POST call, and then reload the data from the server.  While implementing this simple use case, we are going to come across something that might be surprising at first: its really simple to do duplicate network calls accidentally while using Angular HTTP. We are going to learn the reason why that is the case, and learn how we can avoid that using the RxJs Cache Operator."
+          "longDescription": "In this lesson.ts we are going to use the HTTP module to implement a modification operation: we are going to add a lesson.ts to a allLessons list via an HTTP POST call, and then reload the data from the server.  While implementing this simple use case, we are going to come across something that might be surprising at first: its really simple to do duplicate network calls accidentally while using Angular HTTP. We are going to learn the reason why that is the case, and learn how we can avoid that using the RxJs Cache Operator."
         },
         {
           "description": "How to do multiple HTTP requests using the RxJs Concat Operator",

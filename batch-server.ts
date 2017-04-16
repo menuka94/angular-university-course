@@ -23,7 +23,7 @@ function runConsumer() {
 
     console.log("Running consumer ...");
 
-    const lessonsRef = database().ref("lessons");
+    const lessonsRef = database().ref("allLessons");
     const lessonsPerCourseRef = database().ref("lessonsPerCourse");
 
     const queueRef = database().ref('queue');

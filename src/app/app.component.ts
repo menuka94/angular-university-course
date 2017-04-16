@@ -19,7 +19,7 @@ export class AppComponent {
     this.courses$ = af.database.list('courses');
     this.courses$.subscribe(value => console.log(value));
 
-    this.lesson$ = af.database.object('lessons/-Khmb1aj6X2hQdfDVh0k');
+    this.lesson$ = af.database.object('allLessons/-Khmb1aj6X2hQdfDVh0k');
     this.lesson$.subscribe(value => console.log(value));
 
     this.courses$.map(courses => courses[0])
