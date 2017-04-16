@@ -25,6 +25,7 @@ import { CoursesComponent } from './courses/courses.component';
 import {CoursesService} from "./shared/model/courses.service";
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
+import { SafeUrlPipe } from './shared/security/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
     TopMenuComponent,
     CoursesComponent,
     CourseDetailComponent,
-    LessonDetailComponent
+    LessonDetailComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

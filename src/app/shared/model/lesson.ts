@@ -7,6 +7,7 @@ export class Lesson{
        public tags: string,
        public pro: boolean,
        public longDescription: string,
+       public videoUrl: string,
        public courseId: string
    ){
 
@@ -20,12 +21,13 @@ export class Lesson{
       return array.map(json => Lesson.fromJson(json));
    }
 
-   static fromJson({$key, description, duration, url, tags, pro, longDescription, courseId}): Lesson{
+   static fromJson({$key, description, duration, url, videoUrl, tags, pro, longDescription, courseId}): Lesson{
       return new Lesson(
           $key,
           description,
           duration,
           url,
+          videoUrl,
           tags,
           pro,
           longDescription,

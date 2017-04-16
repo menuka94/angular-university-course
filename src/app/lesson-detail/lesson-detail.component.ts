@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {LessonsService} from "../shared/model/lessons.service";
+import {Lesson} from "../shared/model/lesson";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -8,15 +10,37 @@ import {LessonsService} from "../shared/model/lessons.service";
   styleUrls: ['./lesson-detail.component.css']
 })
 export class LessonDetailComponent implements OnInit {
+  lesson: Lesson;
 
   constructor(private route: ActivatedRoute,
-              private lessonsService: LessonsService) { }
+              private lessonsService: LessonsService,
+              private router: Router) {
+    console.log('lesson detail created');
+  }
 
   ngOnInit() {
-    let lessonUrl = this.route.snapshot.params['id'];
-    let lesson$ = this.lessonsService.findLessonByUrl(lessonUrl);
+    this.route.params
+        .switchMap(params => {
+          let lessonUrl = params['id'];
+          return this.lessonsService.findLessonByUrl(lessonUrl);
+        })
+        .subscribe(lesson => this.lesson = lesson);
+  }
 
-    lesson$.subscribe(console.log);
+  next(){
+    console.log('lesson detail next()');
+    this.lessonsService.loadNextLesson(this.lesson.courseId, this.lesson.$key)
+        .subscribe(lesson => this.navigateToLesson(lesson, this));
+  }
+
+  previous(){
+    console.log('lesson detail previous()');
+    this.lessonsService.loadPreviousLesson(this.lesson.courseId, this.lesson.$key)
+        .subscribe(lesson => this.navigateToLesson(lesson, this));
+  }
+
+  navigateToLesson(lesson: Lesson, thisInstance: LessonDetailComponent){
+    thisInstance.router.navigate(['lessons', lesson.url]);
   }
 
 }
