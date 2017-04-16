@@ -43,4 +43,29 @@ export class AppComponent {
   listUpdate(){
     this.courses$.update(this.firstCourse, {description: 'Angular 2 HTTP Modified'});
   }
+
+  objUpdate(){
+    this.lesson$.update({description: 'New Description'})
+        .then(
+            () => console.log('Object update done'),
+            err => console.error(err)
+        );
+  }
+
+  objSet(){
+    this.lesson$.set({description: 'New Description'})
+        .then(
+            () => console.log('Object set done'),
+            err => console.error(err)
+        );
+  }
+
+  objRemove(){
+    this.lesson$.remove()
+        .then(
+            () => console.log('Object Remove done'),
+            err => console.error(err)
+        );
+  }
+
 }
