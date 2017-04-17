@@ -1,0 +1,3 @@
+<app-lesson-form #form></app-lesson-form>
+
+<button [disabled]="!form.valid" (click)="save(form)">Save New Lesson</button>
