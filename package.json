@@ -28,6 +28,7 @@
     "angularfire2": "^2.0.0-beta.8",
     "core-js": "^2.4.1",
     "firebase": "^3.7.6",
+    "firebase-queue": "^1.6.1",
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.4",
     "ng2-firebase": "^1.0.0",
