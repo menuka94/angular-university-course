@@ -33,6 +33,7 @@ import {LessonResolver} from "./shared/model/lesson.resolver";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {AuthService} from "./shared/security/auth.service";
+import {AuthGuard} from "./shared/security/auth.guard";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import {AuthService} from "./shared/security/auth.service";
     RouterModule.forRoot(routerConfig),
     AngularFireModule.initializeApp(firebaseConfig, authConfig)
   ],
-  providers: [LessonsService, CoursesService, LessonResolver, AuthService],
+  providers: [LessonsService, CoursesService, LessonResolver, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
